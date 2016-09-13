@@ -1,0 +1,358 @@
+/*
+Theme Name: wp-bootstrap
+Theme URI: http://320press.com/wpbs
+Description: A simple responsive theme based on the Bootstrap framework. Includes multiple page templates, two different sidebars and a theme options panel.
+Version: 3.3.1
+Author: Chris Barnes
+Author URI: http://cbarn.es
+Tags: black, white, one-column, two-columns, flexible-width, custom-background, custom-colors, custom-menu, full-width-template, theme-options
+License: GNU General Public License v2.0 & Apache License 2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/licenses/LICENSE-2.0
+*/
+
+/* HEADS UP: Everything that you will normally find here can be found in the library/less/wp.less */
+
+body{
+	background:linear-gradient(to right, #ffc7df 50%, #ffb899 50%);
+	padding-top:20px;
+	overflow-x:hidden;
+}
+
+.container{
+	max-width:960px;
+}
+
+
+
+a{
+-webkit-transition: all 0.3s ease 0s; 
+-moz-transition: all 0.3s ease 0s; 
+-ms-transition: all 0.3s ease 0s;
+transition: all 0.3s ease 0s;
+}
+
+.menu .menu-bar{
+	cursor:pointer;
+	display:inline-block;
+}
+
+.menu .menu-bar span {
+    background: #fff;
+    display: block;
+    height: 3px;
+    margin-bottom: 4px;
+    width: 25px;
+	color:transparent;
+	position:relative;
+}
+
+.menu .menu-bar span:before{
+	content:"";
+	position:absolute;
+	width:0;
+	height:3px;
+	background:#000;
+	-webkit-transition: all 0.3s ease 0s; 
+	-moz-transition: all 0.3s ease 0s; 
+	-ms-transition:all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.menu .menu-bar:hover span:before{
+	width:100%;
+}
+
+#navigation {
+    background: #5cb4a9 none repeat scroll 0 0;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 313px;
+    z-index: 2;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight:700; 
+	-webkit-transition: tranform 0.5s ease 0s; 
+	-moz-transition: transform 0.5s ease 0s; 
+	-ms-transition: transform 0.5s ease 0s;
+	transition: transform 0.5s ease 0s;
+	transform:translateX(-100%);
+	-webkit-transform:translateX(-100%);
+	-ms-transform:translateX(-100%);
+	-moz-transform:translateX(-100%);
+	text-align: center;
+}
+
+#navigation.menu-open{
+	transform:translateX(0%);
+	-webkit-transform:translateX(0%);
+	-ms-transform:translateX(0%);
+	-moz-transform:translateX(0%);
+}
+
+#navigation .navbar-nav {
+	float:none;
+}
+#navigation .navbar-nav li{
+	display:block;
+	float:none;
+}
+
+#navigation .navbar-nav li a{
+	font-size:14px;
+	text-transform:uppercase;
+	color:#fff;
+}
+
+#navigation .navbar-nav li a:hover{
+	background:none;
+	color:#000;
+}
+
+
+.cross {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.cross-wrap {
+    text-align: center;
+	margin-top:20px;
+}
+
+.cross span{
+	 height: 4px;
+	 width:25px;
+	 background:#fff;
+	 display:block;
+	 position:relative;
+}
+
+.cross span:before{
+	content:"";
+	position:absolute;
+	width:0;
+	height:4px;
+	background:#000;
+	-webkit-transition: all 0.3s ease 0s; 
+	-moz-transition: all 0.3s ease 0s; 
+	-ms-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	left:0;
+	top:0;
+}
+
+.cross:hover span:before{
+	width:100%;
+}
+
+.cross span:first-child{
+	 transform: rotate3d(0, 0, 1, -45deg);
+}
+
+.cross span:last-child {
+    transform: translateY(-4px) rotate(45deg);
+}
+
+.navigation-logo{
+	margin-top:89px;
+}
+
+.social{
+	position:fixed;
+	right:0;
+	width:43px;
+	background:#5cb4a9;
+	z-index:2;
+	top:20px;
+	text-align:center;
+
+}
+
+.social ul{
+	padding:0;
+	list-style:none;
+	padding-bottom:13px;
+	margin:0;
+}
+
+.social ul li{
+	padding-top:13px;
+}
+
+.social ul li a{
+	font-size:18px;
+	color:#fff;
+}
+
+.social ul li a:hover{
+	color:#000;
+}
+
+.home-slider{
+	position:relative;
+}
+.navbar-brand {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50%;
+    display: inline-block;
+    float: none;
+    font-size: 18px;
+    height: 232px;
+    line-height: 20px;
+    margin-left: 25px;
+    margin-top: -20px;
+	padding:0;
+    position: relative;
+    width: 234px;
+}
+
+.navbar-brand > img {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.home-slider ul{
+	list-style:none;
+	padding:0;
+}
+.home-slider .logo-wrap {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.home-slider .bx-wrapper .bx-viewport{
+	border:none;
+    box-shadow: none;
+    left: 0;
+	background:none;
+}
+
+.home-slider .bx-wrapper .bx-pager.bx-default-pager a{
+	background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+    display: block;
+    height: 15px;
+    margin: 0 5px;
+    outline: 0 none;
+    text-indent: -9999px;
+    width: 15px;
+}
+
+.home-slider .bx-wrapper .bx-pager.bx-default-pager a:hover, .home-slider .bx-wrapper .bx-pager.bx-default-pager a.active{
+	background: #fff none repeat scroll 0 0;
+}
+
+.home-slider .bx-wrapper .bx-pager{
+	padding-top:0;
+	position:absolute; 
+	bottom:12px;
+	z-index:2;
+}
+
+.home-slider .slider-wrap{
+	margin-top:90px;
+}
+
+.home-slider .slider-wrap h1 {
+    bottom: -65px;
+    color: #fff;
+    font-family: "Bungee Shade",cursive;
+    font-size: 81px;
+    position: absolute;
+    right: 0;
+	line-height: 97px;
+    text-align: right;
+	text-transform:uppercase;
+}
+
+.post_image .msnry-grid {    
+    margin-top: -100px;
+    position: relative;    
+}
+
+.post_image .msnry-grid .custom-msnry{
+	width: 453px;
+	height: 365px;
+}
+.post_image .msnry-grid:first-child{
+	margin-top:0;
+}
+.post_image .msnry-grid:nth-child(odd) .custom-msnry {
+	display:block;
+}
+.post_image .msnry-grid:nth-child(even) .custom-msnry {
+	float: right;
+}
+
+.post_image::before {
+    background: rgba(0, 0, 0, 0) url("images/polaroids.png") repeat scroll 0 0;
+    bottom: 48px;
+    content: "";
+    height: 219px;
+    left: -7px;
+    position: absolute;
+    width: 337px;
+    z-index: 2;
+}
+
+.msnry-wrapper {
+    padding-left: 113px;
+}
+
+.post_image{
+	overflow:hidden;
+	position:relative;
+	margin-left:-15px;
+}
+
+.home .wrapper{
+	margin-top:81px;
+}
+
+.post_content {
+    color: #fff;
+    padding-right: 270px;
+    padding-top: 60px;
+}
+
+.post_content p {
+	font-family: 'proxima';
+	font-weight:300;
+	letter-spacing:1px;
+}
+
+.post_content h2{
+    font-family: 'Indie Flower', cursive;
+	font-size:45px;
+}
+
+.post_content_wrapper{
+	position:relative;
+}
+
+.post_content_wrapper::before {
+    background: rgba(0, 0, 0, 0) url("images/home-woohoo.png") repeat scroll 0 0;
+    content: "";
+    height: 209px;
+    position: absolute;
+    right: -40px;
+    top: 110px;
+    width: 279px;
+    z-index: 2;
+}
+
+.post_content_wrapper {
+    margin-right: -15px;
+    position: relative;
+}
+
+
+
+
