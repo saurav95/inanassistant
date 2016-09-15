@@ -1,3 +1,6 @@
+<?php get_template_part( 'template-parts/tagline' ); ?>
+<?php get_template_part( 'template-parts/instagram' , 'slider' ); ?>
+<?php get_template_part( 'template-parts/subscribe' ); ?>
 			<footer role="contentinfo">
 			
 				<div id="inner-footer" class="clearfix">

@@ -59,7 +59,7 @@ Template Name: Homepage
 							
 		
 							
-							<section class="row">
+							<section class="row main-content">
 							
 								<div class="col-sm-7"> 
 									<div class="post_image"> 
@@ -88,11 +88,6 @@ Template Name: Homepage
 														
 							</section> <!-- end article header -->
 							
-							<footer>
-				
-								<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","wpbootstrap") . ': ', ', ', '</span>'); ?></p>
-								
-							</footer> <!-- end article footer -->
 						
 						</article> <!-- end article -->
 						
@@ -125,5 +120,4 @@ Template Name: Homepage
 				</div> <!-- end #content -->
 			</div>
 			</div>	
-
 <?php get_footer(); ?>

@@ -15,7 +15,9 @@
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
 		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet"> 
-		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 		
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->

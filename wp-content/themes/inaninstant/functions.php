@@ -604,6 +604,11 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
       array('jquery'), 
       '1.2' );	
 	  
+    wp_register_script( 'instafeed', 
+      get_template_directory_uri() . '/js/instafeed.min.js', 
+      array('jquery'), 
+      '2.0' );	  
+	  
     wp_register_script( 'owl-carousel', 
       get_template_directory_uri() . '/js/owl.carousel.js', 
       array('jquery'), 
@@ -615,6 +620,7 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
  
     wp_enqueue_script( 'bootstrap' );
 	wp_enqueue_script( 'custom' );
+	wp_enqueue_script( 'instafeed' );
 	wp_enqueue_script( 'owl-carousel' );
 	wp_enqueue_script( 'bx-slider' );
     wp_enqueue_script( 'wpbs-js' );
