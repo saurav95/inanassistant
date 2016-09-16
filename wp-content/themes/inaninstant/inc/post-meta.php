@@ -48,4 +48,26 @@ Container::make('post_meta', 'Front View Options')
 		'yes' => 'Yes',
 		'no' => 'No'
 	))->set_default_value('yes'),	
-    ));		
+    ));	
+
+// Praise Page Option
+
+Container::make('post_meta', 'Praise Grid')
+    ->show_on_template('page-praise.php')
+        ->add_fields(array(
+		Field::make('complex', 'crb_praise_posts')->add_fields(array(
+			Field::make('image', 'Insert Image')->set_value_type('url'),				
+			Field::make("textarea", "crb_description", "Add Description")
+			->set_rows(4),
+			Field::make('text', 'crb_subtitle', "Add Name"),
+			Field::make("select", "crb_choose_arw", "Choose Arrow And Its Position(optional)")
+				->add_options(array(
+					'noarrow'=> 'No Arrow',
+					'arrow_tl' => 'Arrow on top left ',
+					'arrow_tr' => 'Arrow on top right',
+					'arrow_bl' => 'Arrow on bottom left',
+					'arrow_br' => 'Arrow on bottom right'
+				))
+				->help_text('Shows Arrow on Image'),			
+		))
+	));

@@ -4,7 +4,7 @@
 			<footer role="contentinfo">
 			
 				<div id="inner-footer" class="clearfix">
-		          <hr />
+		         
 		          <div id="widget-footer" class="clearfix row">
 		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
 		            <?php endif; ?>
@@ -14,13 +14,21 @@
 		            <?php endif; ?>
 		          </div>
 					
-					<nav class="clearfix">
-						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
-					</nav>
 					
-					<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">320press</a></p>
-			
-					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
+					<div class="container">
+						<nav class="clearfix text-center">
+							<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
+						</nav>
+					</div>
+					
+						 <hr />
+					<div class="container">	 
+						<div class="copyright">
+							<p class="pull-right">Website by Smack Bang Designs</p>
+							<p class="attribution">Copyright 2016 In An Instant Photography </p>
+							
+						</div>
+					</div>
 				
 				</div> <!-- end #inner-footer -->
 				
