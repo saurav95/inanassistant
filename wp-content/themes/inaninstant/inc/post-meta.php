@@ -66,8 +66,77 @@ Container::make('post_meta', 'Praise Grid')
 					'arrow_tl' => 'Arrow on top left ',
 					'arrow_tr' => 'Arrow on top right',
 					'arrow_bl' => 'Arrow on bottom left',
-					'arrow_br' => 'Arrow on bottom right'
 				))
 				->help_text('Shows Arrow on Image'),			
 		))
 	));
+	
+// Bio Page Option	
+Container::make('post_meta', 'Studio Photo Booth')
+    ->show_on_template('page-bio.php')
+    ->add_fields(array(
+		Field::make("textarea", "crb_description_photo", "Add Description")
+		->set_rows(4),
+		Field::make('complex', 'crb_photo_slider','Add Photo')->add_fields(array(
+			Field::make('image', 'Insert Photo')->set_value_type('url'),
+		))
+    ));	
+Container::make('post_meta', 'Halo Booth')
+    ->show_on_template('page-bio.php')
+    ->add_fields(array(
+		Field::make("textarea", "crb_description_gif", "Add Description")
+		->set_rows(4),
+		Field::make('complex', 'crb_gif_slider','Add Photo')->add_fields(array(
+			Field::make('image', 'Insert Photo')->set_value_type('url'),
+		))
+    ));	
+
+Container::make('post_meta', 'Jess And Seb Section')
+    ->show_on_template('page-bio.php')
+    ->add_fields(array(
+		Field::make('image', 'Jess Pic')->set_value_type('url'),
+		Field::make("rich_text", "crb_description_js", "Add Description"),
+		Field::make('image', 'Seb Pic')->set_value_type('url'),
+    ));	
+	
+// faq Page Option
+
+Container::make('post_meta', 'Faq Page Style')
+	->show_on_template('page-faq.php')
+	->add_fields(array(
+	Field::make('complex', 'crb_faq_posts')->add_fields(array(
+		Field::make('text', 'crb_title'),
+		Field::make("textarea", "crb_description", "Add Description")
+		->set_rows(4),	
+	))
+	
+));		
+
+
+// Services Page Option
+
+Container::make('post_meta', 'Add Services')
+	->show_on_template('page-services.php')	
+	->add_fields(array(	
+		Field::make('complex', 'crb_services_section')->add_fields(array(
+			Field::make('text', 'crb_service_title'),
+			Field::make('complex', 'crb_service_content','Add Serices')->add_fields(array(
+			Field::make("rich_text", "crb_service_content", "Add Service Content"),
+			)),
+			Field::make('complex', 'crb_service_slider','Add Photo')->add_fields(array(	
+				Field::make('image', 'Insert Photo')->set_value_type('url'),
+			))
+		))
+	));
+			
+		
+Container::make('post_meta', 'Props To You Section')
+    ->show_on_template('page-services.php')	
+    ->add_fields(array(		
+		Field::make('image', 'prop_first_image' ,'Insert First Image')->set_value_type('url'),
+		Field::make('text', 'crb_title'),
+		Field::make("textarea", "crb_description", "Add Description")
+		->set_rows(4),		
+		Field::make('image','prop_second_image'  ,'Insert Second Image')->set_value_type('url'),
+    ));	
+	

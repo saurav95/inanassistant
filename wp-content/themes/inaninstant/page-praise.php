@@ -8,6 +8,7 @@ Template Name: Praise
 			</div><!--container end-->
 			<?php 
 			$praise_data = carbon_get_post_meta($post->ID , 'crb_praise_posts', 'complex'); 
+			
 			$i = 0;
 			?>
 			<div id="content" class="clearfix row">
@@ -24,28 +25,28 @@ Template Name: Praise
 						
 					
 					
-						<section class="post_content clearfix" itemprop="articleBody">
+						<section class="praise_post_content clearfix" itemprop="articleBody">
 							
 							<div class="container">
-							
-							<?php the_content(); ?>
-							<?php foreach($praise_data as $praise) { $i++ ?> 
-							<div class="praise-posts">
-								<div class="row flx"> 
-									<div class="col-sm-6 <?php if($i%2==1) { echo "odd"; } else { echo "even flx-right"; } ?>">
-										<div class="banner-image praise-image" style="background-image:url(<?php echo $praise['insert_image']; ?>);"> </div>
-									</div>
-									<div class="col-sm-6">
-										<div class="praise-content"> 
-											<p><?php echo $praise['crb_description']; ?></p>
-											<h3><?php echo $praise['crb_subtitle']; ?></h3>
+								<div class="praise-post-wrapper">
+								<?php the_content(); ?>
+								<?php foreach($praise_data as $praise) { $i++ ?> 
+								<div class="praise-posts">
+									<div class="row flx <?php if($i%2==1) { echo "odd"; } else { echo "even"; } ?>"> 
+										<div class="col-sm-6 <?php if($i%2==0) {echo "flx-right"; }?> ">
+											<div class="banner-image arrow praise-image <?php if($i%2==0) {echo "pull-right"; } if($i == 1) {echo "first" ; } echo ' '.$praise['crb_choose_arw']; ?>" style="background-image:url(<?php echo $praise['insert_image']; ?>);"> </div>
+										</div>
+										<div class="col-sm-6">
+											<div class="praise-content"> 
+												<p><?php echo nl2br($praise['crb_description']); ?></p>
+												<h3><?php echo $praise['crb_subtitle']; ?></h3>
+											</div>
 										</div>
 									</div>
 								</div>
+								<?php } //end foreach ?>
+								</div>
 							</div>
-							<?php } //end foreach ?>
-							</div>
-					
 						</section> <!-- end article section -->
 
 					

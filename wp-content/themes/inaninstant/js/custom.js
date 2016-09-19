@@ -45,7 +45,7 @@ var Blank ={
 				owl.owlCarousel({
 				margin:10,
 				dots:false,
-				autoplay:false,
+				autoplay:true,
 				autoplaySpeed:800,
 				autoplayTimeout:1000,
 				autoplayHoverPause:true,
@@ -75,7 +75,7 @@ var Blank ={
 		if (image.type == 'image') {
 		  image.template = '<img src="' + image.images.standard_resolution.url + '" />';
 		} else {
-		  image.template = '<video width="" height="" controls loop autoplay><source src="' + image.videos.standard_resolution.url + '" type="video/mp4"/></video>';
+		  image.template = '<video width="" height="" controls loop autoplay muted><source src="' + image.videos.standard_resolution.url + '" type="video/mp4"/></video>';
 		}
 		return true;
 	  },
@@ -83,7 +83,66 @@ var Blank ={
 		});
 		userFeed.run();	
 		}
-	}
+	},
+	bio_photo_slider : function(){
+			$('.photo-slider').owlCarousel({
+				center: true,
+				items:2,
+				loop:true,
+				responsive:{
+					600:{
+						items:2
+					}
+				}
+			});		
+	},
+	bio_gif_slider : function(){
+
+	$('.gif-slider').owlCarousel({
+		loop:true,
+		nav:false,
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:3
+			},
+			1000:{
+				items:4
+			}
+		}
+	})	
+		
+	},
+	accordion : function(){
+		function toggleIcon(e) {
+			$(e.target)
+				.prev('.panel-heading')
+				.find(".more-less")
+				.toggleClass('plus minus');
+		}
+		$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+		$('.panel-group').on('shown.bs.collapse', toggleIcon);
+	},
+
+	polaroid : function(){
+		var top_pos = $('.msnry-wrapper .msnry-grid:first-child').height();
+		$('.polaroid').css({"top":top_pos});
+	},
+
+	center_slide : function(){
+			$('.slider-center').owlCarousel({
+			center: true,
+			items:2,
+			loop:true,
+			responsive:{
+				600:{
+					items:2
+				}
+			}
+		});	
+	}	
 	
 
 
@@ -96,6 +155,11 @@ $(document).ready(function(){
 	Blank.menu_close();
 	Blank.home_slide_hit();
 	Blank.instagram_slider();
+	Blank.bio_photo_slider();
+	Blank.bio_gif_slider();
+	Blank.accordion();
+	Blank.polaroid();
+	Blank.center_slide();
 });
 
 $(window).load(function(){
@@ -104,4 +168,5 @@ $(window).load(function(){
 
 $(window).resize(function(){
 	Blank.home_slide_hit();
+	Blank.polaroid();
 });

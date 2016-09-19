@@ -1,29 +1,29 @@
 <?php get_header(); ?>
+			</div> <!-- end #container -->
 			
-			<div id="content" class="clearfix row">
+			<div id="content" class="clearfix">
 			
-				<div id="main" class="col-sm-8 clearfix" role="main">
+				<div id="main" class="clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						
-						<header>
-							
-							<div class="page-header"><h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1></div>
-						
-						</header> <!-- end article header -->
 					
-						<section class="post_content clearfix" itemprop="articleBody">
-							<?php the_content(); ?>
+					
+						<section class="default-page clearfix" itemprop="articleBody">
+							
+							<div class="container">
+
+								<div class="page-default default-bg">
+									<div class="text-center">
+										<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+									</div>								
+									<div class="page-content"><?php the_content(); ?></div>
+								</div>
+							</div>
 					
 						</section> <!-- end article section -->
-						
-						<footer>
-			
-							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","wpbootstrap") . ':</span> ', ', ', '</p>'); ?>
-							
-						</footer> <!-- end article footer -->
+
 					
 					</article> <!-- end article -->
 					
@@ -48,7 +48,7 @@
 			
 				</div> <!-- end #main -->
     
-				<?php get_sidebar(); // sidebar 1 ?>
+				<?php //get_sidebar(); // sidebar 1 ?>
     
 			</div> <!-- end #content -->
 

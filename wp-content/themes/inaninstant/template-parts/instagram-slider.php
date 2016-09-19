@@ -14,8 +14,10 @@ if($instagram_slider == 'yes')
 {	
 ?>
 
-<section class="instagram-slider"> 
-<?php if($instagram_title != ""){ ?> <h3><?php echo $instagram_title; ?></h3> <?php } ?>
+<section class="instagram-slider text-center"> 
+<div class="container"></div>
+<?php if($instagram_title != ""){ ?> <div class="gap"><div class="glitter-wrap"><h3 class="glitter"><?php echo $instagram_title; ?></h3></div></div><?php } ?>
+
 <div class="instagram-wrapper">
 	<div id="instafeed" class="owl2row-plugin"></div>
 </div>	

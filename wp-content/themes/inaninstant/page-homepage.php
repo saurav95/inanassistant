@@ -63,6 +63,7 @@ Template Name: Homepage
 							
 								<div class="col-sm-7"> 
 									<div class="post_image"> 
+										<div class="polaroid"></div>
 										<div class="msnry-wrapper">
 											<div class="msnry-grid">
 												<div class="custom-msnry" style="background:url('<?php echo $img_first; ?>'); background-size:cover;  background-position:center center;"></div>
