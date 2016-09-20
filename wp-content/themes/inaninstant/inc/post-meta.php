@@ -140,3 +140,14 @@ Container::make('post_meta', 'Props To You Section')
 		Field::make('image','prop_second_image'  ,'Insert Second Image')->set_value_type('url'),
     ));	
 	
+Container::make('post_meta', 'Back Drop The Mic Section')
+    ->show_on_template('page-services.php')	
+    ->add_fields(array(		
+		Field::make('text', 'crb_title_back'),
+		Field::make("textarea", "crb_description_back", "Add Description")
+		->set_rows(4),	
+		Field::make('complex', 'crb_service_backdrop','Add Photo')->add_fields(array(	
+			Field::make('image', 'Insert Photo')->set_value_type('url'),
+		))		
+    ));		
+	

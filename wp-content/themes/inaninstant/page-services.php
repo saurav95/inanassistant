@@ -14,6 +14,9 @@ Template Name: Services
 				$prop_img2 = carbon_get_post_meta($post->ID , 'prop_second_image');
 				$prop_title = carbon_get_post_meta($post->ID , 'crb_title');
 				$prop_desc  = carbon_get_post_meta($post->ID , 'crb_description');
+				$back_title = carbon_get_post_meta($post->ID , 'crb_title_back');
+				$back_desc  = carbon_get_post_meta($post->ID , 'crb_description_back');
+				$galleries = carbon_get_post_meta($post->ID , 'crb_service_backdrop', 'complex');  
 			?>
 			<div id="content" class="clearfix row">
 			
@@ -84,9 +87,9 @@ Template Name: Services
 								<div class="container bio-bg">
 									<div class="backdrop-content-wrapper">								
 										<div class="col-sm-6 col-centered text-center">
-											<h2 class="service-title">back-drop the mic</h2>
+											<h2 class="service-title"><?php echo $back_title; ?></h2>
 											<p>
-												Designed by us, brought to life by you! Our backdrops are big and bold, and we prepare them with your event in mind. Tell us what you want and we will set to work on a backdrop to rival the party punch as the top hit of the night.
+												<?php echo $back_desc; ?>
 											</p>
 										</div>
 
@@ -96,29 +99,44 @@ Template Name: Services
 									<div class="container bio-bg"></div>
 									<div class="col-sm-11 col-centered text-center"> 
 										<div class="backdrop-gallery">
+										<?php foreach($galleries as $gallery) { ?>
 											<div class="col-sm-3"> 
-												<div class="banner-image gallery" > </div>
+												<div class="banner-image gallery" style="background-image:url('<?php echo $gallery['insert_photo'];  ?>')"> </div>
 											</div>
-											<div class="col-sm-3"> 
-												<div class="banner-image gallery" > </div>
-											</div>
-											<div class="col-sm-3"> 
-												<div class="banner-image gallery" > </div>
-											</div>
-											<div class="col-sm-3"> 
-												<div class="banner-image gallery" > </div>
-											</div>
-											<div class="col-sm-3"> 
-												<div class="banner-image gallery" > </div>
-											</div>
-											<div class="col-sm-3"> 
-												<div class="banner-image gallery" > </div>
-											</div>											
+										<?php } ?>												
 										</div>
 									</div>
 								
 								</div>								
 							</div>
+							
+							<div class="other-stuff"> 
+								<div class="container bio-bg">
+									<div class="row">
+										<div class="col-sm-4 col-sm-offset-2">
+											<div class="stuff-content text-center">
+												<h2 class="service-title">other stuff</h2>
+												<p>Extra Polaroid shots: $20 a packet / $2 each</p>
+												<p>Additional hours: $150/hr</p>
+												<p>Custom engraved timber guest book: From $130
+													Includes pens and washi tape plus different options for covers and binding colours. Live the minimalist dream with this perfect wooden keepsake for your rocking event.</p>
+												<p>Custom laser cut signs: From $60</p>
+												<p>Custom props: custom quote</p>
+												<p>Custom backdrops: custom quote</p>												
+											</div>
+										</div>
+										<div class="col-sm-4 col-sm-offset-1">
+											<div class="stuff-image-wrap"> 
+												<div class="stuff-image banner-image"> 
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+							</div>
+							
 						</section> <!-- end article section -->
 
 					

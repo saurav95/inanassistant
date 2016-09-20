@@ -1319,7 +1319,6 @@ body.page-template-page-services .service strong{
 .gallery{
 	height:200px;
 	width:100%;
-	background-image:url('images/gallery1.jpg');
 }
 
 .backdrop-gallery .col-sm-3 {
@@ -1327,4 +1326,45 @@ body.page-template-page-services .service strong{
     float: none;
     margin-right: -4px;
 	padding:8px;
+}
+
+.other-stuff .bio-bg{
+	padding-top:160px;
+	padding-bottom:160px;
+}
+
+.stuff-image-wrap{
+	
+}
+
+.stuff-image{
+	background-image:url('images/other-stuff.jpg');
+	height:288px;
+	width:432px;
+	-webkit-transform:rotate(22deg);
+	-ms-transform:rotate(22deg) ;
+	-moz-transform:rotate(22deg) ;
+	transform: rotate(22deg);
+	position:relative;
+	margin-top: 150px;
+}
+
+.stuff-image::after{
+	background: rgba(0, 0, 0, 0) url("images/Sparkle.png") repeat scroll 0 0;
+    right: -40px;
+    top: -50px;
+	position:absolute;
+	width:57px;
+	height:72px;
+	content:"";
+}	
+
+.stuff-image::before{
+	background: rgba(0, 0, 0, 0) url("images/other-stuff-arrow.png") repeat scroll 0 0;
+    bottom: 10px;
+    content: "";
+    height: 79px;
+    left: -70px;
+    position: absolute;
+    width: 100px;
 }
